@@ -1,0 +1,15 @@
+# ROMs
+*.z64
+*.rom
+
+# Saves
+*.sra
+
+# Dev Info
+*.log
+*.sym
+
+# Build
+build/original/*.bin
+build/original/*.vpk
+build/original/*.txt

@@ -1,2 +1,9 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+*.bin binary
+
+*.req binary
+
+*.rgba8888 binary
+*.rgba5551 binary
+*.ia8 binary
+
+*.aifc binary
