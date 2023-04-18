@@ -1,5 +1,6 @@
-# Smash Remix
-*A Super Smash Bros. 64 Mod Organized by The_Smashfather*
+# Smash Remix with OP Vanilla Characters
+*Smash Remix is A Super Smash Bros. 64 Mod Organized by The_Smashfather*
+* This is a branch of Smash Remix 1.3.1
 
 ## Building
 ### THIS IS ONLY FOR THOSE INTERESTED IN THE SOURCE CODE OF THE MOD. PLEASE DOWNLOAD THE RELEASE VERSION BY CLICKING THE RELEASE TAB.
