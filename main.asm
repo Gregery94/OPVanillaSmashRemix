@@ -205,6 +205,11 @@ include "src/NMarina/NMarina.asm"
 // OP Link
 include "src/OPLink/OPLink.asm"
 
+// OP Samus
+include "src/OPSamus/OPSamus.asm"
+
+// OP Luigi
+include "src/OPLuigi/OPLuigi.asm"
 
 // KIRBY
 include "src/Kirby/Kirby.asm"

@@ -44,6 +44,7 @@ scope Character {
 
         read32 {name}_action_array, "../roms/original.z64", (ACTION_ARRAY_TABLE_ORIGINAL + (id.{name} * 0x4))
         global evaluate {name}_action_array_origin({name}_action_array - 0x80084800)
+
     }
 
     // @ Description
@@ -436,7 +437,7 @@ scope Character {
         }
         // Get ROM offset for action struct
         if {action} >= 0xDC {
-            variable ACTION_STRUCT({Character.{name}_action_array} + (({action} - 0xDC) * 0x14))
+            variable ACTION_STRUCT({Character.{name}_action_array_origin} + (({action} - 0xDC) * 0x14))
         } else {
             variable ACTION_STRUCT(Character.SHARED_ACTION_ARRAY + ({action} * 0x14))
         }
@@ -3048,6 +3049,16 @@ scope Character {
 
     // set up constants for existing characters
     define_character(LINK)
+    define_character(SAMUS)
+    define_character(MARIO)
+    define_character(LUIGI)
+    define_character(NESS)
+    define_character(FOX)
+    define_character(FALCON)
+    define_character(JIGGLYPUFF)
+    define_character(YOSHI)
+    define_character(DK)
+    define_character(PIKACHU)
     define_character(METAL)
     define_character(NMARIO)
     define_character(NFOX)
