@@ -205,6 +205,9 @@ include "src/NMarina/NMarina.asm"
 // OP Link
 include "src/OPLink/OPLink.asm"
 
+// OP Pikachu
+include "src/OPPikachu/OPPikachu.asm"
+
 // OP Samus
 include "src/OPSamus/OPSamus.asm"
 
