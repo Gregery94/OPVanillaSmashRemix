@@ -202,6 +202,9 @@ include "src/Dedede/Dedede.asm"
 // NMARINA
 include "src/NMarina/NMarina.asm"
 
+// OP Fox
+include "src/OPFox/OPFox.asm"
+
 // OP Link
 include "src/OPLink/OPLink.asm"
 
