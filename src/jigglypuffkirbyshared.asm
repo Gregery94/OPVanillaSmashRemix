@@ -785,7 +785,7 @@ scope JigglypuffKirbyShared {
         beql    t0, t7, _end                    // take branch if j kirby
         addiu   t9, r0, 0x32                    // 50 HP in hex, J version
 
-        addiu   t9, r0, 0x26                    // original line 2, 38 HP in hex, U version
+        addiu   t9, r0, 0x32                    // modified original line 2, (was 38 HP in hex, U version)87
 
         _end:
         j       _return                         // return
