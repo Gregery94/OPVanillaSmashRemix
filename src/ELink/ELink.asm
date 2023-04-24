@@ -10,9 +10,6 @@ scope ELink {
     // Modify Action Parameters             // Action               // Animation                // Moveset Data             // Flags
     Character.edit_action_parameters(ELINK, Action.FSmash,          -1,                         FSMASH,                     -1)
 
-    // LINK
-    Character.edit_vanilla_action_parameters(LINK, Action.FSmash,   -1,                         FSMASH,                     -1)
-
     // Modify Menu Action Parameters             // Action          // Animation                // Moveset Data             // Flags
 
 

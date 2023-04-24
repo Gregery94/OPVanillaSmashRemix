@@ -202,45 +202,36 @@ include "src/Dedede/Dedede.asm"
 // NMARINA
 include "src/NMarina/NMarina.asm"
 
-// OP Mario
-include "src/OPMario/OPMario.asm"
-
-// OP JigglyPuff
-include "src/OPJigglyPuff/OPJigglyPuff.asm"
-
-// OP Ness
-include "src/OPNess/OPNess.asm"
-
-// OP Yoshi
-include "src/OPYoshi/OPYoshi.asm"
-
-// OP Donkey Kong
-include "src/OPDonkeyKong/OPDonkeyKong.asm"
-
-// OP Captain Falcon
-include "src/OPFalcon/OPFalcon.asm"
-
-// OP Fox
-include "src/OPFox/OPFox.asm"
-
-// OP Link
-// todo: check up special projectile thingy
-include "src/OPLink/OPLink.asm"
-
-// OP Pikachu
-include "src/OPPikachu/OPPikachu.asm"
-
-// OP Samus
-include "src/OPSamus/OPSamus.asm"
-
-// OP Luigi
-include "src/OPLuigi/OPLuigi.asm"
-
 // KIRBY
 include "src/Kirby/Kirby.asm"
 include "src/KirbyHats.asm"
 // JKIRBY
 include "src/JKirby/JKirby.asm"
+
+// OP Mario
+include "src/OPMario/OPMario.asm"
+// OP JigglyPuff
+include "src/OPJigglyPuff/OPJigglyPuff.asm"
+// OP Ness
+include "src/OPNess/OPNess.asm"
+// OP Yoshi
+include "src/OPYoshi/OPYoshi.asm"
+// OP Donkey Kong
+include "src/OPDonkeyKong/OPDonkeyKong.asm"
+// OP Captain Falcon
+include "src/OPFalcon/OPFalcon.asm"
+// OP Fox
+include "src/OPFox/OPFox.asm"
+// OP Link // todo: check up special projectile thingy
+include "src/OPLink/OPLink.asm"
+// OP Pikachu
+include "src/OPPikachu/OPPikachu.asm"
+// OP Samus
+include "src/OPSamus/OPSamus.asm"
+// OP Luigi
+include "src/OPLuigi/OPLuigi.asm"
+// OP Kirby
+include "src/OPKirby/OPKirby.asm"
 
 // MIDI
 include "src/MIDI.asm"

@@ -435,11 +435,23 @@ scope Character {
         if !{defined num} {
             evaluate num(0)
         }
-        // Get ROM offset for action struct
-        if {action} >= 0xDC {
-            variable ACTION_STRUCT({Character.{name}_action_array_origin} + (({action} - 0xDC) * 0x14))
+        
+        if Character.id.{name} != Character.id.KIRBY {
+        
+            // Get ROM offset for action struct
+            if {action} >= 0xDC {
+                variable ACTION_STRUCT({Character.{name}_action_array_origin} + (({action} - 0xDC) * 0x14))
+            } else {
+                variable ACTION_STRUCT(Character.SHARED_ACTION_ARRAY + ({action} * 0x14))
+            }
+            
         } else {
-            variable ACTION_STRUCT(Character.SHARED_ACTION_ARRAY + ({action} * 0x14))
+            // Get ROM offset for action struct
+            if {action} >= 0xDC {
+                variable ACTION_STRUCT({Character.JKIRBY_parent_action_array} + (({action} - 0xDC) * 0x14))
+            } else {
+                variable ACTION_STRUCT(Character.SHARED_ACTION_ARRAY + ({action} * 0x14))
+            }
         }
 
         // Get offset for parameter struct
