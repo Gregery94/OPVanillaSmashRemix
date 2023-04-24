@@ -202,10 +202,29 @@ include "src/Dedede/Dedede.asm"
 // NMARINA
 include "src/NMarina/NMarina.asm"
 
+// OP Mario
+include "src/OPMario/OPMario.asm"
+
+// OP JigglyPuff
+include "src/OPJigglyPuff/OPJigglyPuff.asm"
+
+// OP Ness
+include "src/OPNess/OPNess.asm"
+
+// OP Yoshi
+include "src/OPYoshi/OPYoshi.asm"
+
+// OP Donkey Kong
+include "src/OPDonkeyKong/OPDonkeyKong.asm"
+
+// OP Captain Falcon
+include "src/OPFalcon/OPFalcon.asm"
+
 // OP Fox
 include "src/OPFox/OPFox.asm"
 
 // OP Link
+// todo: check up special projectile thingy
 include "src/OPLink/OPLink.asm"
 
 // OP Pikachu

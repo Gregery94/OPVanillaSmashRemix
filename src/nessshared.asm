@@ -254,7 +254,7 @@ scope NessShared {
         beq     t0, t1, _end                // end if character id = JNESS
         nop
 
-        lui     at, 0x4292                  // original line 1 (Ness U Speed)
+        lui     at, 0x42B4                  // modified original line 1 (OP Ness U Speed)
 
         _end:
         mtc1    at, f18                     // original line 2
@@ -300,7 +300,7 @@ scope NessShared {
         beq     t0, t1, _end                // end if character id = LUCAS
         nop
 
-        lui     at, 0x4292                  // original line 1 (Ness U Speed)
+        lui     at, 0x42B4                  // modified original line 1 (op Ness U Speed)
 
         _end:
         mtc1    at, f16                     // original line 2
@@ -345,7 +345,7 @@ scope NessShared {
         beq     t0, t1, _end                // end if character id = JNESS
         nop
 
-        lui     at, 0x42BE                  // original line 1 (Ness U Speed)
+        lui     at, 0x42F0                  // modified original line 1 (op Ness U Speed)
 
         _end:
         mtc1    at, f16                     // original line 2
@@ -390,7 +390,7 @@ scope NessShared {
         beq     t0, t1, _end                // end if character id = JNESS
         nop
 
-        lui     at, 0x42BE                  // original line 1 (Ness U Speed)
+        lui     at, 0x42F0                  // modified original line 1 (op Ness U Speed)
 
         _end:
         mtc1    at, f8                      // original line 2
