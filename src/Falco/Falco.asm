@@ -96,7 +96,7 @@ scope Falco {
 
     // Modify Actions            // Action          // Staling ID   // Main ASM                 // Interrupt/Other ASM          // Movement/Physics ASM         // Collision ASM
     Character.edit_action(FALCO, 0xE1,              -1,             0x800D94C4,                 Phantasm.ground_subroutine_,    -1,                             -1)
-    Character.edit_action(FALCO, 0xE2,              -1,             0x8015C750,                 Phantasm.air_subroutine_,       Phantasm.air_physics_,          Phantasm.air_collision_)
+    Character.edit_action(FALCO, 0xE2,              -1,             0x800D94E8,                 Phantasm.air_subroutine_,       Phantasm.air_physics_,          Phantasm.air_collision_)
 
     // Modify Menu Action Parameters             // Action          // Animation                // Moveset Data             // Flags
     Character.edit_menu_action_parameters(FALCO, 0x1,               -1,                         VICTORY_POSE_1,             -1)
