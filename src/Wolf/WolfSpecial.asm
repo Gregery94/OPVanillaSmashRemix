@@ -364,8 +364,8 @@ scope WolfNSP {
 
 // Subroutines for Up Special    
 scope WolfUSP {
-    constant X_SPEED(0x435c)                // current setting - float:100.0
-    constant Y_SPEED(0x42f0)                // current setting - float:40.0
+    constant X_SPEED(0x43A5)                // current setting - float:330.0
+    constant Y_SPEED(0x4334)                // current setting - float:180.0
 	constant LANDING_FSM(0x3E80)            // current setting - float:0.25
 	constant Y_INPUT(0x3f4c)				// current setting - float:0.5
     constant B_PRESSED(0x40)                // bitmask for b press

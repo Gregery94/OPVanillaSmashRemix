@@ -283,6 +283,94 @@ scope Falco {
         sw      t6, 0x0B18(v0)              // store up special delay (original line 4)
     }
 
+    // ORIGINAL REMIX
+    // // @ Description
+    // // Loads a unique up special velocity value for Falco.
+    // scope up_special_velocity_1_: {
+        // OS.patch_start(0xD6FF8, 0x8015C5B8)
+        // j       up_special_velocity_1_
+        // nop
+        // _return:
+        // OS.patch_end()
+
+        // // s0 = player struct
+        // addiu   sp, sp,-0x0010              // allocate stack space
+        // sw      t0, 0x0004(sp)              // ~
+        // sw      t1, 0x0008(sp)              // store t0, t1
+        // lw      t0, 0x0008(s0)              // t0 = character id
+        // ori     t1, r0, Character.id.FALCO  // t1 = FALCO
+        // beq     t0, t1, _end                // branch if character = FALCO
+        // lui     at, 0x42C4                  // up special velocity = 0x42C40000
+
+        // lui     at, 0x42E6                  // up special velocity = 0x42E60000 (original line 1)
+        // _end:
+        // lw      t0, 0x0004(sp)              // ~
+        // lw      t1, 0x0008(sp)              // load t0, t1
+        // addiu   sp, sp, 0x0010              // deallocate stack space
+        // mtc1    t2, f10                     // original line 2
+        // j       _return                     // return
+        // nop
+    // }
+
+    // ORIGINAL REMIX
+    // // @ Description
+    // // Loads a unique up special velocity value for Falco.
+    // scope up_special_velocity_2_: {
+        // OS.patch_start(0xD7130, 0x8015C6F0)
+        // j       up_special_velocity_2_
+        // nop
+        // _return:
+        // OS.patch_end()
+
+        // // s0 = player struct
+        // addiu   sp, sp,-0x0010              // allocate stack space
+        // sw      t0, 0x0004(sp)              // ~
+        // sw      t1, 0x0008(sp)              // store t0, t1
+        // lw      t0, 0x0008(s0)              // t0 = character id
+        // ori     t1, r0, Character.id.FALCO  // t1 = FALCO
+        // beq     t0, t1, _end                // branch if character = FALCO
+        // lui     at, 0x42C4                  // up special velocity = 0x42C40000
+
+        // lui     at, 0x42E6                  // up special velocity = 0x42E60000 (original line 1)
+        // _end:
+        // lw      t0, 0x0004(sp)              // ~
+        // lw      t1, 0x0008(sp)              // load t0, t1
+        // addiu   sp, sp, 0x0010              // deallocate stack space
+        // mtc1    at, f10                     // original line 2
+        // j       _return                     // return
+        // nop
+    // }
+
+    // ORIGINAL REMIX
+    // // @ Description
+    // // Loads a unique up special velocity value for Falco.
+    // scope up_special_velocity_3_: {
+        // OS.patch_start(0xD7154, 0x8015C714)
+        // j       up_special_velocity_3_
+        // nop
+        // _return:
+        // OS.patch_end()
+
+        // // s0 = player struct
+        // addiu   sp, sp,-0x0010              // allocate stack space
+        // sw      t0, 0x0004(sp)              // ~
+        // sw      t1, 0x0008(sp)              // store t0, t1
+        // lw      t0, 0x0008(s0)              // t0 = character id
+        // ori     t1, r0, Character.id.FALCO  // t1 = FALCO
+        // beq     t0, t1, _end                // branch if character = FALCO
+        // lui     at, 0x42C4                  // up special velocity = 0x42C40000
+
+        // lui     at, 0x42E6                  // up special velocity = 0x42E60000 (original line 1)
+        // _end:
+        // lw      t0, 0x0004(sp)              // ~
+        // lw      t1, 0x0008(sp)              // load t0, t1
+        // addiu   sp, sp, 0x0010              // deallocate stack space
+        // mtc1    at, f8                      // original line 2
+        // j       _return                     // return
+        // nop
+    // }
+    
+    // OP REMIX
     // @ Description
     // Loads a unique up special velocity value for Falco.
     scope up_special_velocity_1_: {
@@ -299,9 +387,9 @@ scope Falco {
         lw      t0, 0x0008(s0)              // t0 = character id
         ori     t1, r0, Character.id.FALCO  // t1 = FALCO
         beq     t0, t1, _end                // branch if character = FALCO
-        lui     at, 0x42C4                  // up special velocity = 0x42C40000
+        lui     at, 0x4313                  // up special velocity = 0x42C40000
 
-        lui     at, 0x42E6                  // up special velocity = 0x42E60000 (original line 1)
+        lui     at, 0x432C                  // up special velocity = 0x42E60000 (original line 1)
         _end:
         lw      t0, 0x0004(sp)              // ~
         lw      t1, 0x0008(sp)              // load t0, t1
@@ -311,6 +399,7 @@ scope Falco {
         nop
     }
 
+    // OP REMIX
     // @ Description
     // Loads a unique up special velocity value for Falco.
     scope up_special_velocity_2_: {
@@ -327,9 +416,9 @@ scope Falco {
         lw      t0, 0x0008(s0)              // t0 = character id
         ori     t1, r0, Character.id.FALCO  // t1 = FALCO
         beq     t0, t1, _end                // branch if character = FALCO
-        lui     at, 0x42C4                  // up special velocity = 0x42C40000
+        lui     at, 0x4313                  // up special velocity = 0x42C40000
 
-        lui     at, 0x42E6                  // up special velocity = 0x42E60000 (original line 1)
+        lui     at, 0x432C                  // up special velocity = 0x42E60000 (original line 1)
         _end:
         lw      t0, 0x0004(sp)              // ~
         lw      t1, 0x0008(sp)              // load t0, t1
@@ -339,6 +428,7 @@ scope Falco {
         nop
     }
 
+    // OP REMIX
     // @ Description
     // Loads a unique up special velocity value for Falco.
     scope up_special_velocity_3_: {
@@ -355,9 +445,9 @@ scope Falco {
         lw      t0, 0x0008(s0)              // t0 = character id
         ori     t1, r0, Character.id.FALCO  // t1 = FALCO
         beq     t0, t1, _end                // branch if character = FALCO
-        lui     at, 0x42C4                  // up special velocity = 0x42C40000
+        lui     at, 0x4313                  // up special velocity = 0x42C40000
 
-        lui     at, 0x42E6                  // up special velocity = 0x42E60000 (original line 1)
+        lui     at, 0x432C                  // up special velocity = 0x42E60000 (original line 1)
         _end:
         lw      t0, 0x0004(sp)              // ~
         lw      t1, 0x0008(sp)              // load t0, t1
@@ -366,4 +456,5 @@ scope Falco {
         j       _return                     // return
         nop
     }
+
 }
