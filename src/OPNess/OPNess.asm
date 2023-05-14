@@ -17,4 +17,9 @@ scope OPNess {
 
     // Modify Actions            // Action          // Staling ID   // Main ASM                 // Interrupt/Other ASM          // Movement/Physics ASM         // Collision ASM
 
+    // @ Description
+    // Ness/Lucas clones will transition to aerial idle after up special
+    OS.patch_start(0xCEE60, 0x80154420)
+    jal     0x8013F9E0
+    OS.patch_end()
 }
