@@ -592,7 +592,7 @@ scope LinkShared {
         lui     at, 0x428E                  // at = float: 71
         beq     t1, t0, _end                // end if character id = JLINK
         nop
-        lui     at, 0x428A                  // at = float: 69 (original line 1)
+        lui     at, 0x42c0                  // OP modified, the original was at = float: 69 (original line 1)
 
         _end:
         mtc1    at, f4                      // original line 2

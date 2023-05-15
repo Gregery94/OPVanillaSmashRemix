@@ -387,9 +387,9 @@ scope Falco {
         lw      t0, 0x0008(s0)              // t0 = character id
         ori     t1, r0, Character.id.FALCO  // t1 = FALCO
         beq     t0, t1, _end                // branch if character = FALCO
-        lui     at, 0x4313                  // up special velocity = 0x42C40000
+        lui     at, 0x42C4                  // up special velocity = 0x42C40000
 
-        lui     at, 0x432C                  // up special velocity = 0x42E60000 (original line 1)
+        lui     at, 0x430c                  // up special velocity = 0x42E60000 (original line 1)
         _end:
         lw      t0, 0x0004(sp)              // ~
         lw      t1, 0x0008(sp)              // load t0, t1
@@ -416,9 +416,9 @@ scope Falco {
         lw      t0, 0x0008(s0)              // t0 = character id
         ori     t1, r0, Character.id.FALCO  // t1 = FALCO
         beq     t0, t1, _end                // branch if character = FALCO
-        lui     at, 0x4313                  // up special velocity = 0x42C40000
+        lui     at, 0x42C4                  // up special velocity = 0x42C40000
 
-        lui     at, 0x432C                  // up special velocity = 0x42E60000 (original line 1)
+        lui     at, 0x430c                  // up special velocity = 0x42E60000 (original line 1)
         _end:
         lw      t0, 0x0004(sp)              // ~
         lw      t1, 0x0008(sp)              // load t0, t1
@@ -445,9 +445,9 @@ scope Falco {
         lw      t0, 0x0008(s0)              // t0 = character id
         ori     t1, r0, Character.id.FALCO  // t1 = FALCO
         beq     t0, t1, _end                // branch if character = FALCO
-        lui     at, 0x4313                  // up special velocity = 0x42C40000
+        lui     at, 0x42C4                  // up special velocity = 0x42C40000
 
-        lui     at, 0x432C                  // up special velocity = 0x42E60000 (original line 1)
+        lui     at, 0x430c                  // up special velocity = 0x42E60000 (original line 1)
         _end:
         lw      t0, 0x0004(sp)              // ~
         lw      t1, 0x0008(sp)              // load t0, t1

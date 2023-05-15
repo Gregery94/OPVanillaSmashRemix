@@ -26,41 +26,7 @@ scope OPFalcon {
     lui     at, 0x4302
     // og line 1 LUI AT, 0x4282
     OS.patch_end()
-    
-    // hook is located in a common routine (may not be the best place but this works!)
-    scope falcon_punch_gravity: {
-        OS.patch_start(0x54A28, 0x800D9228)
-        j       falcon_punch_gravity
-        lw      at, 0x0008(s0)          // at = character id
-        _return:
-        OS.patch_end()
-        
-        addiu   t6, r0, Character.id.FALCON
-        beq     t6, at, _OP             // reduce gravity for Falcon
-        addiu   t6, r0, Character.id.NCAPTAIN
-        beq     t6, at, _OP             // reduce gravity for EFalcon
-        addiu   t6, r0, Character.id.JFALCON
-        beq     t6, at, _OP             // reduce gravity for JFalcon
-        addiu   t6, r0, Character.id.GND
-        beq     t6, at, _OP             // reduce gravity for Ganon
-        nop
-
-        _normal:
-        jal     0x800D8E50              // og routine
-        or      a1, s1, r0              // og line 2
-        j       _return
-        nop
-
-        _OP:
-        addiu   at, r0, 0xE5            // at = falcon punch action id
-        lw      t6, 0x0024(s0)          // t6 = current action
-        bne     at, t6, _normal         // branch if not doing a falcon punch
-        nop
-        jal     half_max_fall_speed
-        or      a1, s1, r0              // og line 2
-        j       _return
-        nop
-    }
+   
     
     // increases ganondorfs up special speed
     scope increase_usp_speed: {
@@ -116,6 +82,53 @@ scope OPFalcon {
         addiu   sp, sp, 0x18
     }
 
+
+    // hook is located in a common routine (may not be the best place but this works!)
+    scope falcon_punch_gravity: {
+        OS.patch_start(0x54A28, 0x800D9228)
+        j       falcon_punch_gravity
+        lw      at, 0x0008(s0)          // at = character id
+        _return:
+        OS.patch_end()
+        
+        addiu   t6, r0, Character.id.FALCON
+        beq     t6, at, _OP             // reduce gravity for Falcon
+        addiu   t6, r0, Character.id.NCAPTAIN
+        beq     t6, at, _OP             // reduce gravity for EFalcon
+        addiu   t6, r0, Character.id.JFALCON
+        beq     t6, at, _OP             // reduce gravity for JFalcon
+        addiu   t6, r0, Character.id.GND
+        beq     t6, at, _OP_ganon       // reduce gravity for Ganon
+        nop
+
+        _normal:
+        jal     0x800D8E50              // og routine
+        or      a1, s1, r0              // og line 2
+        j       _return
+        nop
+
+        _OP:
+        addiu   at, r0, 0xE5            // at = falcon punch action id
+        lw      t6, 0x0024(s0)          // t6 = current action
+        bne     at, t6, _normal         // branch if not doing a falcon punch
+        nop
+        jal     small_max_fall_speed
+        or      a1, s1, r0              // og line 2
+        j       _return
+        nop
+        
+        _OP_ganon:
+        addiu   at, r0, 0xE5            // at = falcon punch action id
+        lw      t6, 0x0024(s0)          // t6 = current action
+        bne     at, t6, _normal         // branch if not doing a falcon punch
+        nop
+        jal     half_max_fall_speed
+        or      a1, s1, r0              // og line 2
+        j       _return
+        nop
+        
+    }
+
     // based on apply gravity routine 800D8E50
     scope half_max_fall_speed: {
         addiu   sp, sp, -0x18
@@ -125,6 +138,24 @@ scope OPFalcon {
         lui     at, 0x3F00              // ~
         mtc1    at, f6                  // f6 = 0.5
         mul.s   f4, f4, f6              // f4 = max fall speed / 2
+        nop
+        mfc1    a2, f4                  // a2 = modified gravity
+        jal     0x800d8d68              // apply gravity?
+        lw      a1, 0x0058(a1)
+        lw      ra, 0x0014(sp)
+        jr      ra
+        addiu   sp, sp, 0x18
+    }
+    
+    // based on apply gravity routine 800D8E50
+    scope small_max_fall_speed: {
+        addiu   sp, sp, -0x18
+        sw      ra, 0x0014(sp)
+        or      a3, a1, r0
+        lwc1    f4, 0x005C(a3)          // default loads his max falling speed
+        lui     at, 0x3c23              // ~
+        mtc1    at, f6                  // f6 = 0.01
+        mul.s   f4, f4, f6              // f4 = max fall speed / 100
         nop
         mfc1    a2, f4                  // a2 = modified gravity
         jal     0x800d8d68              // apply gravity?
