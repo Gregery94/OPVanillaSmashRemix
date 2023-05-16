@@ -153,6 +153,8 @@ scope DSamus {
         ori     t1, r0, Character.id.DSAMUS // t2 = id.DSAMUS
         beq     t1, t0, _end                // end if character id = DSAMUS
         nop
+        b       _end                        // op samus wont lose bomb either
+        nop
         sb      t9, 0x0148(s0)              // original code
 
         _end:
@@ -178,6 +180,8 @@ scope DSamus {
         lw      t0, 0x0008(s0)              // current character ID
         ori     t1, r0, Character.id.DSAMUS // t2 = id.DSAMUS
         beq     t1, t0, _end                // end if character id = DSAMUS
+        nop
+        b       _end                        // op samus wont lose bomb either
         nop
         sb      t9, 0x0148(s0)              // original code
 

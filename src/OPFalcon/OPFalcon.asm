@@ -15,7 +15,7 @@ scope OPFalcon {
     // increased Falcons aerial drift after up b
     // original value = 0.719084501266
     OS.patch_start(0xDAD00, 0x801602C0)
-    li      a1, 0x40400000      // set aerial drift to be very high to fly all the way home
+    li      a1, 0x3FC00000
     // og line 1 = LUI A1, 0x3F38
     // og line 2 = ORI A1, A1, 0x51EC
     OS.patch_end()
@@ -180,6 +180,28 @@ scope OPFalcon {
 
     }
     
-    
+    // give falcon back his jump after connecting and releasing his up b
+    scope falcon_dive_regain_jump: {
+        OS.patch_start(0xDB18C, 0x8016074C)
+        j       falcon_dive_regain_jump
+        addiu   at, r0, Character.id.GANON
+        _return:
+        OS.patch_end()
+
+        lw      t9, 0x0008(s0)    // t9 = character id
+        beq     at, t9, _ganon_skip
+        nop
+
+        addiu   at, r0, 1         // at = 1 jump
+        sb      at, 0x0148(s0)    // give back aerial jump
+
+        addiu   a1, r0, 0x00ED    // og line 1
+        addiu   a2, r0, 0x0000    // og line 2
+        
+        _ganon_skip:
+        j       _return
+        nop
+
+    }
     
 }
