@@ -184,7 +184,7 @@ scope OPFalcon {
     scope falcon_dive_regain_jump: {
         OS.patch_start(0xDB18C, 0x8016074C)
         j       falcon_dive_regain_jump
-        addiu   at, r0, Character.id.GANON
+        addiu   at, r0, Character.id.GND
         _return:
         OS.patch_end()
 
