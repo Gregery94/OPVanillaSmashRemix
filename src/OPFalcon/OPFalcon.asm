@@ -195,10 +195,9 @@ scope OPFalcon {
         addiu   at, r0, 1         // at = 1 jump
         sb      at, 0x0148(s0)    // give back aerial jump
 
+        _ganon_skip:
         addiu   a1, r0, 0x00ED    // og line 1
         addiu   a2, r0, 0x0000    // og line 2
-        
-        _ganon_skip:
         j       _return
         nop
 
