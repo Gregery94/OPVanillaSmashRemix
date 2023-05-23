@@ -11,7 +11,6 @@ scope OPFox {
     // JPN UP SPECIAL
     // Modify Action Parameters             // Action               // Animation                // Moveset Data             // Flags
     Character.edit_vanilla_action_parameters(FOX, 0xDD,                   -1,                         JFox.NEUTRAL_INF,                -1)
-    Character.edit_vanilla_action_parameters(FOX, Action.DSmash,          -1,                         JFox.DSMASH,                     -1)
     Character.edit_vanilla_action_parameters(FOX, 0xE5,                   -1,                         JFox.UPSPECIALMID,               -1)
     Character.edit_vanilla_action_parameters(FOX, 0xE6,                   -1,                         JFox.UPSPECIALMID,               -1)
     // Modify Menu Action Parameters             // Action          // Animation                // Moveset Data             // Flags
