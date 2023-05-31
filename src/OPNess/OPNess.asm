@@ -4,8 +4,10 @@
 scope OPNess {
 
     // Insert Moveset files
+    insert UTILT, "moveset/UTILT.bin"
 
     // Modify Action Parameters                             // Action           // Animation    // Moveset Data                 // Flags
+    Character.edit_vanilla_action_parameters(NESS, Action.UTilt,           -1,                         UTILT,                            -1)
     Character.edit_vanilla_action_parameters(NESS, Action.DSmash,          -1,                         JNess.DSMASH,                     -1)
     Character.edit_vanilla_action_parameters(NESS, Action.AttackAirU,      -1,                         JNess.UAIR,                       -1)
     Character.edit_vanilla_action_parameters(NESS, Action.USmash,          -1,                         JNess.USMASH,                     -1)
